@@ -24,7 +24,7 @@ g    <script charset="utf-8" type="text/javascript" src="./draw.js" ></script>
 P ::=
    (nu a b c ...) (P)                                     { restriction }
 |  a?INPUT-NAMES. P | a?INPUT-NAMES                       { input without label }
-|  a?label INPUT-NAMES. P | a?label INPUT-NAMES           { input with one branch with label }
+|  a?label: INPUT-NAMES. P | a?label: INPUT-NAMES           { input with one branch with label }
 |  a?{label1 NAMES: P; label2 NAMES: P; ... }             { branching input }
 |  a!OUTPUT-NAMES                                         { output without label }
 |  a!label OUTPUT-NAMES                                   { output/selection }
