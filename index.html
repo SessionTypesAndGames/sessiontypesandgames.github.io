@@ -41,19 +41,23 @@ OUTPUT-NAMES ::=
 
     The <b>coname</b> of a name <tt>x</tt> is denoted <tt>x'</tt>.
 
-    <h2>Input code</h2>
+    <h2>Translation</h2>
 
+    <p>Conflict is drawn as a blue dotted line; otherwise the same convention as in the paper apply.</p>
     <div id="examples">Examples: </div>
-    <textarea id="input" rows="8" style="margin: 2%; width:90%"></textarea>
+    <div style="margin: 10px; height: 600px">
+      <div id="drawing2" style="padding: 10px; float: right; width: 50%; margin-right:20px;border-radius: 5px; border: 1px solid black; height: 300px;">Results:
+        <div id="drawing"></div>
+      </div>
+      <div>Code: <br />
+        <textarea id="input" rows="8" style="width:40%"></textarea>
+        <div style="margin: 10px" id="settings"> </div>
+        <input type="submit" value="Compute semantics" id="button"/>
+        <div style="margin: 10px"  id="context"></div>
+      </div>
+    </div>
 
-    <div style="margin: 10px" id="settings"> </div>
-    <input type="submit" value="Compute semantics" id="button"/>
 
-    
-    <div style="margin: 10px"  id="context"></div>
-
-    Results (conflict is drawn as a blue dotted line; otherwise the same convention as in the paper apply):
-    <div id="drawing"p style="padding: 10px; margin: 30px; border-radius: 5px; border: 1px solid black; width:60%; height: 500px">
     </div>
     </div>
   </body>
