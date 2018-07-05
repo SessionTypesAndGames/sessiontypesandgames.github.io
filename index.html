@@ -22,7 +22,7 @@ g    <script charset="utf-8" type="text/javascript" src="./draw.js" ></script>
     <p>The syntax follows that of the paper, with some adjustements:</p>
     <pre>
 P ::=
-   (nu a b c ...) P                                       { restriction }
+   (nu a b c ...) (P)                                     { restriction }
 |  a?INPUT-NAMES. P | a?INPUT-NAMES                       { input without label }
 |  a?label INPUT-NAMES. P | a?label INPUT-NAMES           { input with one branch with label }
 |  a?{label1 NAMES: P; label2 NAMES: P; ... }             { branching input }
@@ -52,8 +52,8 @@ OUTPUT-NAMES ::=
     
     <div style="margin: 10px"  id="context"></div>
 
-    <div id="drawing" style="padding: 10px; margin: 30px; border-radius: 5px; border: 1px solid black; width:60%; height: 500px">
-      Results:
+    Results (conflict is drawn as a blue dotted line; otherwise the same convention as in the paper apply):
+    <div id="drawing"p style="padding: 10px; margin: 30px; border-radius: 5px; border: 1px solid black; width:60%; height: 500px">
     </div>
     </div>
   </body>
