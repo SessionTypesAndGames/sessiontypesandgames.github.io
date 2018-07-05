@@ -25,7 +25,7 @@ P ::=
    (nu a b c ...) (P)                                     { restriction }
 |  a?INPUT-NAMES. P | a?INPUT-NAMES                       { input without label }
 |  a?label INPUT-NAMES. P | a?label INPUT-NAMES           { input with one branch with label }
-|  a?{label1: NAMES: P; label2: NAMES: P; ... }             { branching input }
+|  a?{label1: NAMES: P; label2: NAMES: P; ... }           { branching input }
 |  a!OUTPUT-NAMES                                         { output without label }
 |  a!label OUTPUT-NAMES                                   { output/selection }
 |  P | Q                                                  { parallel composition }
@@ -41,6 +41,20 @@ OUTPUT-NAMES ::=
 
     The <b>coname</b> of a name <tt>x</tt> is denoted <tt>x'</tt>.
 
+    <h2>Type inference</h2>
+
+    <p>Before computing the interpretation, the session types of each
+    channel is inferred, as types are necessary to compute the
+    interpretation (necessary when interpreting a channel
+      output). <br/>
+
+      Be careful about conames: if you want to represent communication
+      on a channel <tt>a</tt>, you need to need to use <tt>a</tt> on
+      one side, and <tt>a'</tt> on the other. (See the examples for
+      more details). 
+
+    
+    
     <h2>Translation</h2>
 
     <p>Conflict is drawn as a blue dotted line; otherwise the same convention as in the paper apply.</p>
