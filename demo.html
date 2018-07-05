@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"><title>From session π to coincident event structure</title>
+    <link rel="stylesheet" href="style.css">
+    <script charset="utf-8" type="text/javascript" src="./viz.js" ></script>
+g    <script charset="utf-8" type="text/javascript" src="./draw.js" ></script>
+    <script charset="utf-8" type="text/javascript" src="./web.js" ></script>
+    <script charset="utf-8" type="text/javascript" src="./full.js.opaque" ></script>
+  </head>
+  <body>
+    <div id="content">
+    <header>
+      <h1 class="title">From session π to coincident event structure</h1> 
+    </header>
+    <p>This webpage is an implementation of a translation from session
+      π to coincident event structure. It takes as input a session π
+      term and draws the event structure corresponding to its
+      interpretation.</p>
+
+    <h2>Accepted syntax</h2>
+    <p>The syntax follows that of the paper, with some adjustements:</p>
+    <pre>
+P ::=
+   (nu a b c ...) P                                       { restriction }
+|  a?INPUT-NAMES. P | a?INPUT-NAMES                       { input without label }
+|  a?label INPUT-NAMES. P | a?label INPUT-NAMES           { input with one branch with label }
+|  a?{label1 NAMES: P; label2 NAMES: P; ... }             { branching input }
+|  a!OUTPUT-NAMES                                         { output without label }
+|  a!label OUTPUT-NAMES                                   { output/selection }
+|  P | Q                                                  { parallel composition }
+|  P + Q                                                  { nondeterministic sum }
+INPUT-NAMES ::=
+              { empty list }
+| (x, ..., z) { list of names }
+
+OUTPUT-NAMES ::=
+              { empty list }
+| [x, ..., z] { list of names }
+    </pre>
+
+    The <b>coname</b> of a name <tt>x</tt> is denoted <tt>x'</tt>.
+
+    <h2>Input code</h2>
+
+    <div id="examples">Examples: </div>
+    <textarea id="input" rows="8" style="margin: 2%; width:90%"></textarea>
+
+    <div style="margin: 10px" id="settings"> </div>
+    <input type="submit" value="Compute semantics" id="button"/>
+
+    
+    <div style="margin: 10px"  id="context"></div>
+
+    <div id="drawing" style="padding: 10px; margin: 30px; border-radius: 5px; border: 1px solid black; width:60%; height: 500px">
+      Results:
+    </div>
+    </div>
+  </body>
+</html>
